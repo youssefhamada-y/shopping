@@ -118,10 +118,46 @@ export default function Navbar() {
                     </NavLink>
                   </li>
                   
-                  
+                  {/* Logout button for mobile view */}
+                  <li className="md:hidden">
+                    <button
+                      onClick={LogOut}
+                      className="block py-2 md:py-0 relative before:h-[2px] hover:before:w-full before:transition-[width] before:duration-300 hover:font-bold before:bg-blue-400 before:absolute before:left-0 before:-bottom-1 w-full text-left"
+                    >
+                      <span className="flex items-center gap-1">
+                        <span>Logout</span>
+                        <i className="fa-solid fa-right-from-bracket"></i>
+                      </span>
+                    </button>
+                  </li>
                 </ul>
               ) : (
-                ""
+                <ul className="flex flex-col md:hidden mt-4">
+                  <li>
+                    <NavLink
+                      className={({ isActive }) => {
+                        return `block py-2 relative before:h-[2px] hover:before:w-full before:transition-[width] before:duration-300 hover:font-bold before:bg-blue-400 before:absolute before:left-0 before:-bottom-1 ${
+                          isActive ? "before:w-full font-bold" : "before:w-0"
+                        }`;
+                      }}
+                      to="/auth/login"
+                    >
+                      Login
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink
+                      className={({ isActive }) => {
+                        return `block py-2 relative before:h-[2px] hover:before:w-full before:transition-[width] before:duration-300 hover:font-bold before:bg-blue-400 before:absolute before:left-0 before:-bottom-1 ${
+                          isActive ? "before:w-full font-bold" : "before:w-0"
+                        }`;
+                      }}
+                      to="/auth/register"
+                    >
+                      Register
+                    </NavLink>
+                  </li>
+                </ul>
               )}
             </div>
 
