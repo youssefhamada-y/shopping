@@ -12,6 +12,9 @@ import Cart from "./Components/Cart/Cart";
 import Cartprovider from "./Context/Cart.context";
 import Checkout from "./Pages/Checkout/Checkout";
 import AllOrders from "./Pages/AllOrders/AllOrders";
+import Products from "./Pages/Products/Products";
+import Categories from "./Pages/Categories/Categories";
+import Brands from "./Pages/Brands/Brands";
 
 export default function App() {
   const routes = createBrowserRouter([
@@ -29,7 +32,10 @@ export default function App() {
         { path: "/product/:id", element: <ProductDetails /> },
         {path:"allorders",element:<AllOrders/>},
         { path: "/cart", element: <Cart /> },
-        {path:"checkout",element:<Checkout/>}
+        {path:"checkout",element:<Checkout/>},
+        {path:"products",element:<Products/>},
+        {path:"categories",element:<Categories/>},
+        {path:"brands",element:<Brands/>}
       ],
     },
     {
